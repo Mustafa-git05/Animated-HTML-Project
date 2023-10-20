@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Animation Classwork</title>
+	<style type="text/css">
+
+		/*Start of tittle CSS*/
+		.title-body{  
+				min-height: 100vh;
+				background: #252839;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+
+
+			}
+
+
+
+		.animatedtext{ 
+ 	 
+			position: relative;
+			font-size: 7vw;
+			color: #252839;
+			/*-webkit-text-stroke: 0.3vw #383d52;*/
+			text-transform: uppercase;
+			margin-bottom: 500px;}
+
+			.animatedtext::before{
+				content: attr(data-text);
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				width: 0;
+				 height: 100%;
+				 color: silver;
+				 -webkit-text-stroke: 0vw #383d52 ;
+				 border-right: 2px solid whitesmoke;
+				 overflow: hidden;
+				 animation: animate 5s linear infinite;
+				 margin-left: 1400px;}
+
+				 @keyframes animate
+				 {
+
+				 	0%,10%,100%
+				 	{
+				 		width: 0;
+				 	}
+				 	70%,90%
+				 	{
+				 		width: 100%;
+				 	}
+
+				 }
+
+			/*End of tittle CSS*/
+
+
+
+
+
+      /*Start of css code of background*/
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  position: relative;
+  height: 100%;
+  background: linear-gradient(#6084d7 25%, #a2cef4 50%, #a2cef4 50%, #6084d7 100%);
+}
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 auto;
+  perspective: 360px;
+  perspective-origin: 50% 50%;
+}
+
+.top-plane, .bottom-plane {
+  width: 200%;
+  height: 130%;
+  position: absolute;
+  bottom: -30%;
+  left: -50%;
+  background-image: -webkit-linear-gradient(#a2cef4 2px, transparent 2px), -webkit-linear-gradient(left, #a2cef4 2px, transparent 2px);
+  background-size: 100px 100px,100px 100px;
+  background-position: -1px -1px,-1px -1px;
+  transform: rotateX(85deg);
+  animation: planeMoveTop 2s infinite linear;
+}
+
+.bottom-plane {
+  transform: rotateX(-85deg);
+  top: -30%;
+  animation: planeMoveBot 2s infinite linear;
+}
+
+@keyframes planeMoveTop {
+  from {
+    background-position: 0px -100px,0px 0px;
+  }
+  to {
+    background-position: 0px 0px, 100px 0px;
+  }
+}
+@keyframes planeMoveBot {
+  from {
+    background-position: 0px 0px,0px 0px;
+  }
+  to {
+    background-position: 0px -100px, 100px 0px;
+  }
+}
+@media (max-height: 350px) {
+  .wrap {
+    perspective: 210px;
+  }
+}
+/*End of background CSS*/
+
+
+
+      /*Start of css code of plane*/
+
+
+      .airplane {
+      	position: relative;
+      	z-index: 1;
+      }
+
+      /*end of css code of plane*/
+
+
+	</style>
+</head>
+
+
+<!-- Start of title code-->
+<body class="title-body">
+<h1  style=" "  data-text="AIRPLANEO" class="animatedtext"> AIRPLANEO </h1>
+</body>
+<!--End of body code-->
+
+
+<!-- Start of background code-->
+<body>
+  <div class='wrap'>
+    <div class='top-plane'></div>
+    <div class='bottom-plane'></div>
+  </div>
+</body>
+
+
+
+
+<!-- Start of background code-->
+
+
+<body class="airplane">
+	<div class="air">
+ 		<marquee di scrollamount="70" style="  margin-left:120px; margin-right: 950px; width: 1750px;">  <img style=" height: 70px;" src="image-removebg-preview.png"> </marquee>
+	</div> 
+
+
+
+</body>
+</html>
